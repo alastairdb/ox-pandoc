@@ -1434,7 +1434,7 @@ set as `(markdown_strict+footnotes)'."
   "General interface for Pandoc Export.
 If BUF-OR-OPEN is nil, output to file.  0, then open the file.
 t means output to buffer."
-  (unless (equal major-mode 'org-mode)
+  (unless (derived-mode-p 'org-mode)
     (error "You must run this command in org-mode."))
   (unless (executable-find org-pandoc-command)
     (error "Pandoc (version 1.12.4 or later) can not be found."))
